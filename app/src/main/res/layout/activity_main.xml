@@ -6,24 +6,51 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-   <EditText
-       android:id="@+id/url"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:layout_margin="10dp"
-       android:hint="Base URL" />
+    <LinearLayout
+        android:id="@+id/lnr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/pin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/url"
-        android:hint="PIN"/>
+        <EditText
+            android:id="@+id/url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Base URL"
+            android:textSize="16sp"
+            android:text="https://csc2cvn00000017.cloud.kp.org" />
+
+        <EditText
+            android:id="@+id/pin"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/url"
+            android:textSize="16sp"
+            android:hint="PIN"
+            android:text="1234" />
+    </LinearLayout>
+
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/videoCall"
-        android:text="Call"
-        android:layout_below="@+id/pin"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lnr"
+        android:text="Call" />
+
+    <Button
+        android:id="@+id/disconnectCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lnr"
+        android:layout_toRightOf="@+id/videoCall"
+        android:text="Disconnect" />
+
+
+    <android.opengl.GLSurfaceView
+        android:id="@+id/glview_call"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/videoCall" />
 
 </RelativeLayout>
